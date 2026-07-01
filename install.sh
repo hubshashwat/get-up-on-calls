@@ -6,14 +6,14 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PLIST_NAME="com.standup.micmonitor.plist"
+PLIST_NAME="com.getup.micmonitor.plist"
 PLIST_SRC="${SCRIPT_DIR}/${PLIST_NAME}"
 PLIST_DST="$HOME/Library/LaunchAgents/${PLIST_NAME}"
 MIC_SCRIPT="${SCRIPT_DIR}/mic_monitor.sh"
 LOG_DIR="$HOME/Library/Logs"
 
-echo "🧍 Stand-Up-On-Calls — Installer"
-echo "================================="
+echo "🧍 Get-Up-On-Calls — Installer"
+echo "============================="
 echo ""
 
 # 1. Ensure mic_monitor.sh is executable

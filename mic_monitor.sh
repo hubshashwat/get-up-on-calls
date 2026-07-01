@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-#  mic_monitor.sh — Stand Up On Calls
+#  mic_monitor.sh — Get Up On Calls
 #  Detects when your Mac's microphone goes active and sends a notification
 #  reminding you to get up and go to your standing desk.
 #
@@ -18,7 +18,7 @@ set -euo pipefail
 POLL_INTERVAL=5
 
 # Notification message
-NOTIFY_TITLE="🧍 Stand Up!"
+NOTIFY_TITLE="🧍 Get Up!"
 NOTIFY_MESSAGE="You're on a call — get to your standing desk!"
 
 # macOS notification sound (from /System/Library/Sounds/)

@@ -1,10 +1,10 @@
-# 🧍 Stand-Up-On-Calls
+# 🧍 Get-Up-On-Calls
 
 > Get a push notification to go to your standing desk every time you join a call.
 
 A tiny macOS background utility that watches your microphone — when it goes active (Zoom, Meet, FaceTime, Slack, etc.), you get a notification with a sound:
 
-**"🧍 Stand Up! You're on a call — get to your standing desk!"**
+**"🧍 Get Up! You're on a call — get to your standing desk!"**
 
 Works on **Apple Silicon** (M1/M2/M3/M4/M5) and Intel Macs. No apps to install. No dependencies beyond Xcode Command Line Tools.
 
@@ -71,7 +71,7 @@ Edit the top of [`mic_monitor.sh`](mic_monitor.sh):
 POLL_INTERVAL=5
 
 # Notification text
-NOTIFY_TITLE="🧍 Stand Up!"
+NOTIFY_TITLE="🧍 Get Up!"
 NOTIFY_MESSAGE="You're on a call — get to your standing desk!"
 
 # Sound (from /System/Library/Sounds/)
@@ -86,7 +86,7 @@ COOLDOWN_SECONDS=10
 After editing, restart the monitor:
 
 ```bash
-launchctl kickstart -k "gui/$(id -u)/com.standup.micmonitor.plist"
+launchctl kickstart -k "gui/$(id -u)/com.getup.micmonitor.plist"
 ```
 
 ## Manual Run (without LaunchAgent)
@@ -145,10 +145,10 @@ tail -f ~/Library/Logs/mic-monitor.log
 ### LaunchAgent won't start
 ```bash
 # Check status
-launchctl print gui/$(id -u)/com.standup.micmonitor.plist
+launchctl print gui/$(id -u)/com.getup.micmonitor.plist
 
 # Force restart
-launchctl kickstart -k gui/$(id -u)/com.standup.micmonitor.plist
+launchctl kickstart -k gui/$(id -u)/com.getup.micmonitor.plist
 
 # View logs
 cat ~/Library/Logs/mic-monitor.log
@@ -161,7 +161,7 @@ cat ~/Library/Logs/mic-monitor.log
 | `mic_check.swift` | Swift source — queries CoreAudio for mic status |
 | `mic_check` | Compiled binary (auto-generated, git-ignored) |
 | `mic_monitor.sh` | Core script — polls mic state, sends notifications |
-| `com.standup.micmonitor.plist` | LaunchAgent template (paths filled in by install.sh) |
+| `com.getup.micmonitor.plist` | LaunchAgent template (paths filled in by install.sh) |
 | `install.sh` | Sets up auto-start on login |
 | `uninstall.sh` | Cleanly removes everything |
 

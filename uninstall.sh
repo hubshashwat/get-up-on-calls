@@ -5,12 +5,12 @@
 
 set -euo pipefail
 
-PLIST_NAME="com.standup.micmonitor.plist"
+PLIST_NAME="com.getup.micmonitor.plist"
 PLIST_DST="$HOME/Library/LaunchAgents/${PLIST_NAME}"
 LOG_FILE="$HOME/Library/Logs/mic-monitor.log"
 
-echo "🧍 Stand-Up-On-Calls — Uninstaller"
-echo "===================================="
+echo "🧍 Get-Up-On-Calls — Uninstaller"
+echo "==================================="
 echo ""
 
 # 1. Unload the LaunchAgent
