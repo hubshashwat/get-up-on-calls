@@ -1,0 +1,8 @@
+# Compiled binary (rebuilt automatically by mic_monitor.sh or install.sh)
+mic_check
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
