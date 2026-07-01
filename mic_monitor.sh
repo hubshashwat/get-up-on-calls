@@ -75,7 +75,7 @@ send_notification() {
         sound_clause="sound name \"$NOTIFY_SOUND\""
     fi
 
-    osascript -e "display notification \"$NOTIFY_MESSAGE\" with title \"$NOTIFY_TITLE\" $sound_clause" 2>/dev/null || true
+    osascript -e "display alert \"$NOTIFY_TITLE\" message \"$NOTIFY_MESSAGE\"" 2>/dev/null || true
 }
 
 # Get current epoch time

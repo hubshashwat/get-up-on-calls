@@ -28,6 +28,7 @@ git clone https://github.com/shashwatkumar/get-up-on-calls.git
 cd get-up-on-calls
 
 # 2. Run the installer (compiles Swift binary + sets up auto-start on login)
+chmod +x install.sh
 ./install.sh
 
 # 3. That's it! Join a call and watch for the notification 🎉
@@ -37,6 +38,8 @@ The installer will:
 - Compile `mic_check.swift` → `mic_check` binary (first time only)
 - Install a LaunchAgent so it runs automatically on every login
 - Start monitoring immediately
+
+> 💡 **Tip:** Avoid running this from protected macOS folders like `Desktop`, `Downloads`, or `Documents` as macOS may block script execution and binary generation. If you run into permission errors, move the project to a custom folder like `~/tools/` or `~/Developer/` and run it from there.
 
 > **Note:** You may get a macOS prompt asking to allow notifications from **Script Editor** — say **Allow**.
 
@@ -123,6 +126,13 @@ tail -f ~/Library/Logs/mic-monitor.log
 ```
 
 ## Troubleshooting
+
+### Permission Denied or File Access Issues
+- **macOS Protected Folder Block**: macOS heavily restricts script execution and binary compilation inside user folders like `Desktop`, `Downloads`, or `Documents`. If you hit permission errors, move the cloned repository to a directory outside of these (for example, create a folder in your home root like `~/tools/` or `~/Developer/` and move the repository there).
+- **Executable Permission Denied**: If you get a permission denied error when running `./install.sh`, make sure it has executable permissions:
+  ```bash
+  chmod +x install.sh
+  ```
 
 ### Notification doesn't appear
 - Go to **System Settings → Notifications → Script Editor** and ensure notifications are enabled
